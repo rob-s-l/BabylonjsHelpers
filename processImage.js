@@ -44,21 +44,6 @@ console.log("image",input)
 
     // Read pixel data from the tmp canvas, process it, and write into the dynamic texture.
     const imageData = tmpCtx.getImageData(0, 0, tmp.width, tmp.height);
-/*
-    for (let y = 0; y < height; y++) {
-        for (let x = 0; x < width; x++) {
-            const index = (y * width + x) * 4;
-            const r = data[index];
-            const g = data[index + 1];
-            const b = data[index + 2];
-            // Convert to grayscale (preserve alpha)
-            const gray = Math.round(0.299 * r + 0.587 * g + 0.114 * b);
-            data[index] = gray;
-            data[index + 1] = gray;
-            data[index + 2] = gray;
-        }
-    }
-*/
     // Put processed pixels into the dynamic texture's context and update the texture.
     //dtCtx.putImageData(imageData, 0, 0);
     dynamicTexture.update(false);
